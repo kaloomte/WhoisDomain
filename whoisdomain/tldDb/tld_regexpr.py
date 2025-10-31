@@ -263,6 +263,7 @@ ZZ["bank"] = {
 
 ZZ["be"] = {
     "extend": "pl",
+    "_server": "whois.dns.be",
     "domain_name": R(r"\nDomain:\s*(.+)"),
     "registrar": R(r"Company Name:\n?(.+)"),
     "creation_date": R(r"Registered:\s*(.+)\n"),
@@ -2340,7 +2341,7 @@ ZZ["schwarz"] = {"_server": "whois.nic.schwarz", "extend": "com", "_test": "nic.
 ZZ["science"] = {"extend": "com", "_server": "whois.nic.science", "_test": "nic.science"}
 ZZ["sc.ke"] = {"extend": "ke"}
 ZZ["scot"] = {"_server": "whois.nic.scot", "extend": "com", "_test": "nic.scot"}
-ZZ["sc"] = {"_server": "whois2.afilias-grs.net", "extend": "com"}
+ZZ["sc"] = {"_server": "whois.nic.sc", "extend": "com"}
 ZZ["sd"] = {"extend": "com", "_server": "whois.sdnic.sd"}
 ZZ["search"] = {"_server": "whois.nic.google", "extend": "com"}
 ZZ["seat"] = {"_server": "whois.nic.seat", "extend": "com", "_test": "nic.seat"}
@@ -2987,12 +2988,32 @@ ZZ["fj"] = {"_server": "whois.nic.fj", "_test": "nic.fj", "extend": "com"}  # ac
 ZZ["gp"] = {"_server": "whois.nic.gp", "_test": "nic.gp", "extend": "com"}  # actually not working but server exists (dns)
 ZZ["hm"] = {"_server": "whois.registry.hm", "_test": "registry.hm", "extend": "com"}  # actually not working but server exists (dns)
 ZZ["int"] = {"_server": "whois.iana.org", "_test": "eu.int", "extend": "cz"}
-
 ZZ["iq"] = {"_server": " whois.cmc.iq", "_test": "cmc.iq", "extend": "com"}  # ho host:  whois.cmc.iq
 ZZ["mm"] = {"_server": "whois.registry.gov.mm", "_test": "registry.gov.mm", "extend": "com"}
-ZZ["mw"] = {"_server": "whois.nic.mw", "_test": "nic.mw", "extend": "fr"}
 ZZ["post"] = {"_server": "whois.dotpostregistry.net", "_test": "us.post", "extend": "com"}
 ZZ["realtor"] = {"_server": "whois.nic.realtor", "_test": "nic.realtor", "extend": "com"}
 ZZ["weir"] = {"_server": "whois.nic.weir", "_test": "nic.weir", "extend": "com"}
 ZZ["xn--node"] = {"_privateRegistry": True}  # no whois server
 ZZ["भरतम"] = {"_server": "whois.registry.in", "extend": "in"}
+
+
+
+ZZ["com.kw"] = {"_server": "whois.nic.kw", "extend": "com"}
+ZZ["gov.kw"] = {"_server": "whois.nic.kw", "extend": "com"}
+ZZ["org.sg"] = {"_server": "whois.sgnic.sg", "extend": "com"}
+ZZ["mw"] = {
+    "_server": "whois.nic.mw",
+    "_test": "nic.mw",
+    "extend": "com",
+    "domain_name": R(r"domain:\s?(.+)"),
+    "registrar": R(r"registrar:\s?(.+)"),
+    "registrant": R(r"registrant:\s?(.+)"),
+    "registrant_country": None,
+    "creation_date": R(r"registered:\s?(.+)"),
+    "expiration_date": R(r"expire:\s?(.+)"),
+    "updated_date": R(r"changed:\s?(.+)"),
+    "name_servers": R(r"nserver:\s+(\S+)"),
+    "status": R(r"status:\s*(.+)"),
+    "_split": newLineSplit(),
+}
+ZZ["co.mw"] = {"extend": "mw"}
