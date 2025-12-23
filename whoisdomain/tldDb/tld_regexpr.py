@@ -351,7 +351,6 @@ ZZ["cn"] = {
 }
 
 ZZ["com.tr"] = {
-    "extend": "com",
     "_server": "whois.trabis.gov.tr",
     "domain_name": R(r"\*\* Domain Name:\s?(.+)"),
     "registrar": R(r"Organization Name\s+:\s?(.+)"),
@@ -361,7 +360,8 @@ ZZ["com.tr"] = {
     "expiration_date": R(r"Expires on\.+:\s?(.+)."),  # note the trailing . on both dates fields
     "updated_date": None,
     "name_servers": R(r"\*\* Domain Servers:\n(?:(\S+).*\n)?(?:(\S+).*\n)?(?:(\S+).*\n)?(?:(\S+).*\n)?"),  # allow for ip addresses after the name server
-    "status": None,
+    "status": R(r"Domain status :(?:\s+([^\n]+)\n)"),
+    "emails": R(r"([\w\.-]+@[\w\.-]+\.[\w]{2,4})"),
     "_test": "google.com.tr",
 }
 
@@ -2495,7 +2495,7 @@ ZZ["uol"] = {"_server": "whois.gtlds.nic.br", "extend": "bom"}
 ZZ["ups"] = {"_server": "whois.nic.ups", "extend": "com", "_test": "nic.ups"}
 ZZ["us"] = {"extend": "name"}
 ZZ["uy"] = {"extend": "_privateReg"}  # Uruguay
-ZZ["vacations"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
+ZZ["vacations"] = {"extend": "com", "_server": "whois.eurodns.com"}
 ZZ["va"] = {"extend": "_privateReg"}  # This TLD has no whois server.
 ZZ["vana"] = {"_server": "whois.nic.vana", "extend": "com", "_test": "nic.vana"}
 ZZ["vanguard"] = {"_server": "whois.nic.vanguard", "extend": "com", "_test": "nic.vanguard"}
