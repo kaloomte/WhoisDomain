@@ -1763,6 +1763,7 @@ ZZ["education"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
 ZZ["edu.tr"] = {"extend": "com.tr"}
 ZZ["bel.tr"] = {"extend": "com.tr"}
 ZZ["tsk.tr"] = {"extend": "com.tr"}
+ZZ["gen.tr"] = {"extend": "com.tr"}
 ZZ["edu.ua"] = {"extend": "ua", "creation_date": R(r"\ncreated:\s+0-UANIC\s+(.+)")}
 ZZ["eg"] = {"extend": "_privateReg"}  # Egipt
 ZZ["email"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
