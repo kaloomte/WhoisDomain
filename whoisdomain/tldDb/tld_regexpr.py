@@ -350,21 +350,6 @@ ZZ["cn"] = {
     "expiration_date": R(r"Expiration Time:\s?(.+)"),
 }
 
-ZZ["com.tr"] = {
-    "_server": "whois.trabis.gov.tr",
-    "domain_name": R(r"\*\* Domain Name:\s?(.+)"),
-    "registrar": R(r"Organization Name\s+:\s?(.+)"),
-    "registrant": R(r"\*\* Registrant:\s+?(.+)"),
-    "registrant_country": None,
-    "creation_date": R(r"Created on\.+:\s?(.+)."),
-    "expiration_date": R(r"Expires on\.+:\s?(.+)."),  # note the trailing . on both dates fields
-    "updated_date": None,
-    "name_servers": R(r"\*\* Domain Servers:\n(?:(\S+).*\n)?(?:(\S+).*\n)?(?:(\S+).*\n)?(?:(\S+).*\n)?"),  # allow for ip addresses after the name server
-    "status": R(r"Domain status :(?:\s+([^\n]+)\n)"),
-    "emails": R(r"([\w\.-]+@[\w\.-]+\.[\w]{2,4})"),
-    "_test": "google.com.tr",
-}
-
 ZZ["co.il"] = {
     "extend": "com",
     "domain_name": R(r"domain:\s*(.+)"),
@@ -1760,10 +1745,6 @@ ZZ["eco"] = {"_server": "whois.nic.eco", "extend": "com", "_test": "nic.eco"}
 ZZ["edeka"] = {"_server": "whois.afilias-srs.net", "extend": "com"}
 ZZ["ed.jp"] = {"extend": "co.jp"}
 ZZ["education"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
-ZZ["edu.tr"] = {"extend": "com.tr"}
-ZZ["bel.tr"] = {"extend": "com.tr"}
-ZZ["tsk.tr"] = {"extend": "com.tr"}
-ZZ["gen.tr"] = {"extend": "com.tr"}
 ZZ["edu.ua"] = {"extend": "ua", "creation_date": R(r"\ncreated:\s+0-UANIC\s+(.+)")}
 ZZ["eg"] = {"extend": "_privateReg"}  # Egipt
 ZZ["email"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
@@ -1897,7 +1878,6 @@ ZZ["got"] = {"_server": "whois.nic.got", "extend": "com", "_test": "nic.got"}
 ZZ["gov.bd"] = {"extend": "bd"}
 ZZ["gov"] = {"extend": "com"}
 ZZ["gov.rw"] = {"extend": "rw"}
-ZZ["gov.tr"] = {"extend": "com.tr", "_server": "whois.trabis.gov.tr", "_test": "www.turkiye.gov.tr"}
 ZZ["gq"] = {"extend": "ml", "_server": "whois.domino.gq"}
 ZZ["graphics"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
 ZZ["gratis"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
@@ -2154,7 +2134,6 @@ ZZ["net.bd"] = {"extend": "bd"}
 ZZ["net"] = {"extend": "com"}
 ZZ["net.ph"] = {"extend": "ph"}
 ZZ["net.rw"] = {"extend": "rw"}
-ZZ["net.tr"] = {"extend": "com.tr", "_server": "whois.trabis.gov.tr", "_test": "trt.net.tr"}
 ZZ["net.ua"] = {"extend": "ua"}
 ZZ["net.ve"] = {"extend": "ve"}
 ZZ["network"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
@@ -2202,7 +2181,6 @@ ZZ["orange"] = {"_server": "whois.nic.orange", "extend": "com", "_test": "nic.or
 ZZ["organic"] = {"_server": "whois.nic.organic", "extend": "com", "_test": "nic.organic"}
 ZZ["org.ph"] = {"extend": "ph"}
 ZZ["org.rw"] = {"extend": "rw"}
-ZZ["org.tr"] = {"extend": "com.tr", "_server": "whois.trabis.gov.tr", "_test": "dergipark.org.tr"}
 ZZ["org.ve"] = {"extend": "ve"}
 ZZ["org.za"] = {"extend": "za", "_server": "org-whois.registry.net.za"}
 ZZ["org.zw"] = {"extend": "zw"}
@@ -2480,7 +2458,6 @@ ZZ["training"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
 ZZ["travelersinsurance"] = {"_server": "whois.afilias-srs.net", "extend": "com"}
 ZZ["travelers"] = {"_server": "whois.afilias-srs.net", "extend": "com"}
 ZZ["travel"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
-ZZ["tr"] = {"extend": "_privateReg"}
 ZZ["trust"] = {"_server": "whois.nic.trust", "extend": "com", "_test": "nic.trust"}
 ZZ["trv"] = {"_server": "whois.afilias-srs.net", "extend": "com"}
 ZZ["tt"] = {"extend": "_privateReg"}
@@ -3020,3 +2997,39 @@ ZZ["mw"] = {
     "_split": newLineSplit(),
 }
 ZZ["co.mw"] = {"extend": "mw"}
+
+# .tr specials
+ZZ["com.tr"] = {
+    "_server": "whois.trabis.gov.tr",
+    "domain_name": R(r"\*\* Domain Name:\s?(.+)"),
+    "registrar": R(r"Organization Name\s+:\s?(.+)"),
+    "registrant": R(r"\*\* Registrant:\s+?(.+)"),
+    "registrant_country": None,
+    "creation_date": R(r"Created on\.+:\s?(.+)."),
+    "expiration_date": R(r"Expires on\.+:\s?(.+)."),  # note the trailing . on both dates fields
+    "updated_date": None,
+    "name_servers": R(r"\*\* Domain Servers:\n(?:(\S+).*\n)?(?:(\S+).*\n)?(?:(\S+).*\n)?(?:(\S+).*\n)?"),  # allow for ip addresses after the name server
+    "status": R(r"Domain status :(?:\s+([^\n]+)\n)"),
+    "emails": R(r"([\w\.-]+@[\w\.-]+\.[\w]{2,4})"),
+    "_test": "google.com.tr",
+}
+
+ZZ["tr"] = {"extend": "com.tr"}
+ZZ["edu.tr"] = {"extend": "com.tr"}
+ZZ["bel.tr"] = {"extend": "com.tr"}
+ZZ["tsk.tr"] = {"extend": "com.tr"}
+ZZ["gen.tr"] = {"extend": "com.tr"}
+ZZ["net.tr"] = {"extend": "com.tr"}
+ZZ["gov.tr"] = {"extend": "com.tr"}
+ZZ["org.tr"] = {"extend": "com.tr"}
+ZZ["k12.tr"] = {"extend": "com.tr"}
+ZZ["biz.tr"] = {"extend": "com.tr"}
+ZZ["info.tr"] = {"extend": "com.tr"}
+ZZ["web.tr"] = {"extend": "com.tr"}
+ZZ["av.tr"] = {"extend": "com.tr"}
+ZZ["name.tr"] = {"extend": "com.tr"}
+ZZ["tv.tr"] = {"extend": "com.tr"}
+ZZ["pol.tr"] = {"extend": "com.tr"}
+ZZ["bbs.tr"] = {"extend": "com.tr"}
+ZZ["dr.tr"] = {"extend": "com.tr"}
+ZZ["mil.tr"] = {"extend": "com.tr"}
