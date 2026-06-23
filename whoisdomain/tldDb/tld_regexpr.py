@@ -1618,7 +1618,6 @@ ZZ["clubmed"] = {"_server": "whois.nic.clubmed", "extend": "com", "_test": "nic.
 ZZ["cm"] = {"extend": "com"}
 ZZ["coach"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
 ZZ["codes"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
-ZZ["co"] = {"extend": "biz", "status": R(r"Status:\s?(.+)")}
 ZZ["coffee"] = {"extend": "_donuts", "_server": "whois.donuts.co"}
 ZZ["co.ke"] = {"extend": "ke"}
 ZZ["college"] = {"extend": "_centralnic", "_server": "whois.centralnic.com"}
@@ -3034,3 +3033,8 @@ ZZ["dr.tr"] = {"extend": "com.tr"}
 ZZ["mil.tr"] = {"extend": "com.tr"}
 
 ZZ["bh"] = {"extend": "com", "_server": "whois.nic.bh"}  # no whois server found in iana
+ZZ["com.gh"] = {"extend": "com", "_server": "whois.nic.gh"}  # no whois server found in iana
+ZZ["co"] = {
+    "extend": "com",
+    "status": R(r"Domain Status:\s?(.+)"),
+    "_server": "whois.registry.co"}
